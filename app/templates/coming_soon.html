@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SocraticPhysics — Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a2e;
+      --warm: #f5f0e8;
+      --accent: #c0622f;
+      --accent-light: #e8845a;
+      --muted: #6b6560;
+      --border: #ddd8ce;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--ink);
+      color: var(--warm);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ambient background glow */
+    body::before {
+      content: '';
+      position: absolute;
+      top: -200px; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(192,98,47,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    body::after {
+      content: '';
+      position: absolute;
+      bottom: -200px; left: 50%;
+      transform: translateX(-50%);
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(192,98,47,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+    }
+
+    .logo {
+      font-family: 'Lora', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 4rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.1s forwards;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.25s forwards;
+    }
+
+    h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.4s forwards;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent-light);
+    }
+
+    p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(245,240,232,0.6);
+      line-height: 1.75;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.55s forwards;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--accent);
+      margin: 0 auto 3rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.7s forwards;
+    }
+
+    .notify {
+      font-size: 0.88rem;
+      color: rgba(245,240,232,0.4);
+      letter-spacing: 0.04em;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.85s forwards;
+    }
+
+    .notify a {
+      color: var(--accent-light);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(232,132,90,0.35);
+      transition: border-color 0.2s, color 0.2s;
+      padding-bottom: 0.1rem;
+    }
+
+    .notify a:hover {
+      color: #fff;
+      border-color: #fff;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 2rem;
+      font-size: 0.78rem;
+      color: rgba(245,240,232,0.2);
+      letter-spacing: 0.06em;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo">Socratic<span>Physics</span></div>
+
+    <p class="eyebrow">Something is on its way</p>
+
+    <h1>Learning physics through <em>conversation.</em></h1>
+
+    <p>
+      We're building an open, AI-guided homework platform designed to help 
+      students genuinely understand physics — not just complete assignments. 
+      Free to use. Built by a teacher, for students and teachers.
+    </p>
+
+    <div class="divider"></div>
+
+    <p class="notify">
+      Interested in collaborating or learning more?<br>
+      Reach out at <a href="mailto:brettfadem@muhlenberg.edu">brettfadem@muhlenberg.edu</a>
+    </p>
+  </div>
+
+  <footer>Muhlenberg College · 2026</footer>
+
+</body>
+</html>
